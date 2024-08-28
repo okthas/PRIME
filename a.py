@@ -44,13 +44,13 @@ def b(n, m, l):
     return l
 
 l = [2]
-m = [0, 0] # insert start and max number, if m[0] is larger than l[-1] then it won't work
-n = m[0] # change to m[0] or have it at 3 if it doesn't work
-j = True
+m = [0, 0]
+n = m[0]
+j = True # l, m and n's dissapointing cousin
 
 l = r()
 
-print("DO NOT INSERT SYMBOLS OTHER THAN NUMBERS") # I know a fix to it but I'm lazy
+print("DO NOT INSERT SYMBOLS OTHER THAN NUMBERS") # I'm just lazy
 if int(input("""
 1. check number 
 2. generate numbers
@@ -71,7 +71,7 @@ if int(input("""
                 print("PRIME")
                 j = False
                 break
-        if (j): # preferrably j wouldn't exist as a variable due to it's use
+        if (j):
             print("NOT PRIME")
 else:
     m[0] = int(input("start number => "))
