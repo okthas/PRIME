@@ -78,3 +78,5 @@ else:
         n = i
         l = b(n, m, l)
 w(l)
+
+# code for generating prime numbers (not optimal)
