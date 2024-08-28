@@ -43,10 +43,30 @@ def b(n, m, l):
     return l
 
 l = [2]
-m = [89950, 90000] # insert start and max number, if m[0] is larger than l[-1] then it won't work
+m = [0, 0] # insert start and max number, if m[0] is larger than l[-1] then it won't work
 n = m[0] # change to m[0] or have it at 3 if it doesn't work
 
 l = r()
+
+print("DO NOT INSERT SYMBOLS OTHER THAN NUMBERS") # I know a fix to it but I'm lazy
+if int(input("""
+1. check number 
+2. generate numbers
+
+=> """)) == 1:
+    e = int(input("insert number => "))
+    if e > l[-1]:
+        print(b(l[-1], [e-1, e+1], l)) # preferrably [e, e] but I'm unsure if that would work
+    else:
+        for i in l:
+            if i == e:
+                print(True)
+                exit()
+            print(False)
+            exit()
+else:
+    m[0] = int(input("start number => "))
+    m[1] = int(input("end number => "))
 
 if m[0] > l[-1]:
     l = b(n, m, l) 
