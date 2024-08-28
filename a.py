@@ -30,21 +30,23 @@ def p(n, l):
     return True
 
 def b(n, m, l):
-    if n == 2:
-        n += 1
-    else:
-        n += 2
+    if n > l[-1]:
+        n = l[-1]
     while (n <= m[1]): 
         if p(n, l):
-            if n >= m[0]:
+            if n >= m[0] and m[0] != m[1]:
                 print(n)
             l.append(n)
-        n += 2
+        if n == 2:
+            n += 1
+        else:
+            n += 2
     return l
 
 l = [2]
 m = [0, 0] # insert start and max number, if m[0] is larger than l[-1] then it won't work
 n = m[0] # change to m[0] or have it at 3 if it doesn't work
+j = True
 
 l = r()
 
@@ -56,17 +58,26 @@ if int(input("""
 => """)) == 1:
     e = int(input("insert number => "))
     if e > l[-1]:
-        print(b(l[-1], [e-1, e+1], l)) # preferrably [e, e] but I'm unsure if that would work
+        for i in b(l[-1], [e, e], l):
+            if i == e:
+                print("PRIME")
+                j = False
+                break
+        if (j): 
+            print("NOT PRIME")
     else:
         for i in l:
             if i == e:
-                print(True)
-                exit()
-            print(False)
-            exit()
+                print("PRIME")
+                j = False
+                break
+        if (j): 
+            print("NOT PRIME")
 else:
     m[0] = int(input("start number => "))
     m[1] = int(input("end number => "))
+
+n = m[0]
 
 if m[0] > l[-1]:
     l = b(n, m, l) 
@@ -79,4 +90,4 @@ else:
         l = b(n, m, l)
 w(l)
 
-# code for generating prime numbers (not optimal)
+# there is a weird thing where l.txt always starts with 2, 2, instead of just 2, this doesn't affect performance
