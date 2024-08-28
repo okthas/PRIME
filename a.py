@@ -18,7 +18,7 @@ def r():
         return l
     a = 0
     for i in l:
-        l[a] = int(l[a]) # l is still str
+        l[a] = int(l[a])
         a += 1
     return l
 
