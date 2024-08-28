@@ -71,7 +71,7 @@ if int(input("""
                 print("PRIME")
                 j = False
                 break
-        if (j): 
+        if (j): # preferrably j wouldn't exist as a variable due to it's use
             print("NOT PRIME")
 else:
     m[0] = int(input("start number => "))
