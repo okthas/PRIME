@@ -51,11 +51,11 @@ j = True # l, m and n's dissapointing cousin
 l = r()
 
 print("DO NOT INSERT SYMBOLS OTHER THAN NUMBERS") # I'm just lazy
-if int(input("""
+if input("""
 1. check number 
 2. generate numbers
 
-=> """)) == 1:
+=> """) == "1":
     e = int(input("insert number => "))
     if e > l[-1]:
         for i in b(l[-1], [e, e], l):
