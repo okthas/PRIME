@@ -1,3 +1,5 @@
+import math as math
+
 def w(l): 
     w = ""
     if len(r()) > len(l): 
@@ -25,7 +27,7 @@ def r():
 def p(n, l):
     for i in l: 
         o = n/i
-        if int(o) - o == 0 and o >= 2:
+        if int(o) - o == 0 and i <= math.sqrt(n): # from 'and o >= 2' to 'and i <= math.sqrt(n)'
             return False
     return True
 
